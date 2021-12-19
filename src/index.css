@@ -15,8 +15,7 @@ body {
 
 .Page{
   background-image: url('Images/background_purple.png');
-  width: 1440px;
-  height: 1440px;
+  
 }
 
 .document{
@@ -41,7 +40,8 @@ body {
   top: 250px;
   left: 200px;
   width: 600px;
-  height: 250px;
+  height: 225px;
+  padding: 0;
 }
 
 .img_ficha{
@@ -56,13 +56,14 @@ body {
   position: absolute;
   top: 170px;
   left: 550px;
-
+  border: 3px double;
 }
 
 #Drawer1{
   position: relative;
   top: 380px;
   left: 550px;
+  border: 3px double;
 }
 .pres{
   background-color: rgba(0,0,0,0.1);
@@ -71,7 +72,7 @@ body {
   top: 57px;
   left: 250px;
   border-radius: 10%;
-  color: white;
+
   width: 200px;
   padding-left: 10px;
 
@@ -100,13 +101,20 @@ body {
   text-align: center;
 }
 
+.black_piece{
+  width: 30px;
+  padding-left: 5px;
+}
 
 button{
   font: bold 24px monospace;
-  color: white;
+  color: inherit;
   border: none;
   background-color: rgba(0,0,0,0.15);
   height: 50px;
+  border-width: 1px;
+  border-style: dashed;
+  border-radius: 5%;
 }
 
 .bttn_dice:hover{
@@ -118,30 +126,46 @@ button{
 .bttn_rs{
   font: bold 23px monospace;
   height: 40px;
+
 }
 
 .bttn_rs:hover{
-  font-size: 26px;
+  font: bold 26px monospace;
   color: #C996CC;
 }
 
 .Reset{
+  border-width: 1px;
+  border-style: dashed;
   position: relative;
-  left: 120px;
+  left: 100px;
   top: 20px;
+  padding: 15px;
+  text-align: center;
+}
+
+.set-fichas{
+  font: bold 18px monospace;
 }
 
 .Info{
   padding: 12px;
   font: 24px monospace;
-  color: white;
   position: relative;
-  left: 240px;
-  top: 50px;
+  left: 120px;
+  top: 5px;
 }
 
 td{
   border-radius: 5%;
+}
+
+.cell_style{
+  border: none;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+
 }
 
 
@@ -158,4 +182,16 @@ a:hover{
 
 .test_cell{
   background-image: url('');
+}
+
+
+.goal{
+  color: black;
+  font-size: 24px;
+  border-radius: 100%;
+  width: 30px;
+  position:relative;
+  top: -25px;
+  left: 50%;
+  margin: 0;
 }

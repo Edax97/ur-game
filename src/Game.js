@@ -1,19 +1,27 @@
 import { INVALID_MOVE } from 'boardgame.io/core';
 
 export const gameUr = {
-  setup: () => ({ ID:-1, COL:10,cells: Array(2).fill(Array(15).fill(0)), pieza: false, d1: 0, d2: 0, d3:0, d4:0,
+  setup: () => {
+
+
+    return { ID:-1, COL:10,cells: Array(2).fill(Array(15).fill(0)), pieza: false, d1: 0, d2: 0, d3:0, d4:0,
     sum_dados:0, dice_mssg:"Roll the dice", pos_fichas: Array(2).fill(Array(7).fill(-1)), count_cells: 0,
-    mssg:"", num_fichas:7}),
+    mssg:"", num_fichas:7}
+  },
 
   /*
   turn: {
     moveLimit:1,
   },
   */
+
   moves: {
 
         configurar_fichas: (G, ctx, num_fichas) =>{
           G.pos_fichas = Array(2).fill(Array(num_fichas).fill(-1));
+          G.cells= Array(2).fill(Array(15).fill(0));
+
+          G.num_fichas = num_fichas;
         },
         throw_dice: (G,ctx) =>{
 

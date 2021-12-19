@@ -15,28 +15,38 @@ const Title = () => (<td class='head pres'>
                       <h3>The royal game of Ur</h3>
                       <a href="https://www.mastersofgames.com/rules/royal-ur-rules.htm">Rules of the game</a></td>)
 
+const Select_fichas = (props) =>(<form class='set-fichas'>
+                                <lable for='n_pieces'>{props.fichas} tokens</lable> <br/>
+                                <input type='range' name='n_pieces' min='1' max='9' onChange={(e)=>props.change(e)}/>
+                            </form>)
+
+
 export class boardUr extends React.Component {
 
-  /*
+
   constructor(props){
       super(props)
-      this.state = {value: "5"};
+      this.state = {value: "7", flag: 0,};
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
 
   }
 
+
   handleSubmit(event) {
+
     this.props.moves.configurar_fichas(parseInt(this.state.value));
+
+    //window.location.reload();
     event.preventDefault();
   }
 
 
   handleChange(event) {
-    this.setState({value: event.target.value});
 
-    }
-  */
+    this.setState({value: event.target.value,});
+  }
+
 
   onClick(pos, column) {
 
@@ -44,9 +54,10 @@ export class boardUr extends React.Component {
   }
 
   render() {
+
+    //Declare winner
     let winner = '';
     const player_color = ["black", "white"];
-
     if (this.props.ctx.gameover) {
       winner =
         this.props.ctx.gameover.winner !== undefined ? (
@@ -56,37 +67,19 @@ export class boardUr extends React.Component {
         );
     }
 
-    const cellStyle = {
-      border: 'none',
-      width: '50px',
-      height: '50px',
-      lineHeight: '50px',
-      textAlign: 'center',
-      alignItem: '',
 
-    };
+
+    //STYLING
 
     const color_jugadores = ["#808080","#e6e6e6"];
+    const style_player= {'color':color_jugadores[this.props.ctx.currentPlayer]};
+    const style_goal= (file) =>({'backgroundColor':color_jugadores[file/2]});
 
-    const finalStyle = {border: '4px solid red',textAlign: 'center',  width: '50px',height: '50px'};
-    const Gstyle = {position: "relative", top: "10px", left: "50px",border: '2px solid red',textAlign: 'center',  width: '15px',height: '15px'};
-    //const G1style = {position: "absolute", top: "400px", left: "20px",border: '1px solid black',textAlign: 'center',  width: '15px',height: '15px'};
+    const finalStyle = {border: '4px dashed',textAlign: 'center'};
     const a = 40;
 
-
-    const style_info = {border:"2px solid black", backgroundColor:color_jugadores[this.props.ctx.currentPlayer], position: "relative", top: "490px", left: "200px", width: "200px", height:"90px"};
-
-    const style_reset = {border:"2px solid black", backgroundColor: 'rgba(52, 52, 52, 0.3)', position: "relative", top: "380px", left: "200px", width: "160px", height:"90px"};
-
-    //const style_Dados = {border:"2px solid black", position: "absolute", top: "400px", left: "500px", width: "200px", height:"120px"};
-    const style_Dados = {border:"2px solid black", backgroundColor:color_jugadores[this.props.ctx.currentPlayer], position: "relative",
-                         textAlign: "center", top: "450px", left: "600px", width: "250px", height:"150px"};
     const style_dice = {position: "relative", top: "4px", left: "4px", width: "60px", height:"60px"};
     const style_inside = {position: "relative", top: "4px", left: "4px", width: "40px", height:"40px"};
-
-    const style_drawer0 = {border:"2px solid black", backgroundColor:'rgba(52, 52, 52, 0.3)', position: "absolute", top:'39px', left: "550px", width: "290px", height:"50px"};
-    var style_drawer1 = Object.assign({}, style_drawer0);
-    style_drawer1.top="370px";
 
 
 
@@ -97,6 +90,8 @@ export class boardUr extends React.Component {
     //Cuantas fichas llegaron a la meta
     //const Pieces_G0 = this.props.G.pos_fichas[0].filter(c => c == 14).length;
     //const Pieces_G1 = this.props.G.pos_fichas[1].filter(c => c == 14).length;
+
+    //Crear tablero con fichas dentro
 
     var id = 0;
     const Lista_Fichas = [Pieza0, Pieza1, Trans];
@@ -111,7 +106,7 @@ export class boardUr extends React.Component {
           if (j>5){ id = j-6;}
           else if (j<5){ id = 10+j;}
           else {
-            cells.push(<td class='test_cell' border={"none"} key={500+j}></td>);
+            cells.push(<td class='cell_style' border={"none"} key={500+j}></td>);
             continue;}
         }
         var contenido_cell;
@@ -127,16 +122,16 @@ export class boardUr extends React.Component {
         const CL = cl;
         if (j==4 && i !=1){
           cells.push(
-            <td style={finalStyle} key={i*100+id} onClick={() => this.onClick(ID, CL)}>
-              <img src={[Lista_Fichas[index_p]]} position={"relative"} width={"40px"} height={"40px"} top = {"10 px"}/>
-            <td style={Gstyle}>{this.props.G.pos_fichas[CL].filter(c => c == 14).length}</td>
+            <td class='cell_style' key={i*100+id} onClick={() => this.onClick(ID, CL)}>
+              <img class='img_ficha' src={[Lista_Fichas[index_p]]}/>
+
             </td>
           );
           continue;
         }
 
         cells.push(
-          <td style={cellStyle} key={i*100+id} onClick={() => this.onClick(ID, CL)}>
+          <td class='cell_style' key={i*100+id} onClick={() => this.onClick(ID, CL)}>
             <img class='img_ficha' src={[Lista_Fichas[index_p]]}/>
 
           </td>
@@ -148,25 +143,26 @@ export class boardUr extends React.Component {
 
     //Decidir posicion de cada Dado
     var Lista_Dados = [Cero, Uno];
-    //const player_color = ["negro", "blanco"];
+
+    //Llenar los cajones con las fichas restantes
     let Fichas_Restantes_0= [];
     let Fichas_Restantes_1= [];
-    const n = this.props.num_fichas;
+    const _n = this.props.G.num_fichas;
     for (let k=0; k<Pieces_S0; k++){
       Fichas_Restantes_0.push(<img src={Pieza0} style={style_inside} top={'4px'} left={'30px'}/>);}
-    for (let k=Pieces_S0;k<n;k++){
-      Fichas_Restantes_0.push(<img src={Vacio} top={'4px'} left={'30px'}/>);}
+    for (let k=Pieces_S0;k<_n;k++){
+      Fichas_Restantes_0.push(<img src={Vacio} class='black_piece'/>);}
 
     for (let k=0; k<Pieces_S1; k++){
       Fichas_Restantes_1.push(<img src={Pieza1} style={style_inside} top={'4px'} left={'30px'}/>);}
-    for (let k=Pieces_S1;k<n;k++){
-      Fichas_Restantes_1.push(<img src={Vacio} top={'4px'} left={'30px'}/>);}
+    for (let k=Pieces_S1;k<_n;k++){
+      Fichas_Restantes_1.push(<img src={Vacio} class='black_piece'/>);}
 
 
     return (
       <div class='Page'>
 
-        <div class="Document">
+        <div class="Document" style={style_player}>
 
         <div class='Header'>
           <Title></Title>
@@ -200,8 +196,9 @@ export class boardUr extends React.Component {
           </td>
 
           <td class="Reset">
+            <Select_fichas fichas={this.state.value} change={(e)=>(this.handleChange(e))}></Select_fichas>
             <br></br>
-            <button type="button"  class='bttn_rs' onClick={()=>window.location.reload()}> Restart </button> <br></br>
+            <button type="button"  class='bttn_rs' onClick={(e) => this.handleSubmit(e)}> Restart </button> <br></br>
           </td>
 
           <td class="Info">
