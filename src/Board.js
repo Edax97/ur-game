@@ -10,7 +10,7 @@ import Fondo from "./Images/madera.jpeg"
 import { ImageBackground } from 'react'
 
 
-const Present = () => (<td class='pres'><p>Developed by {"E."} Campos<br></br> <a href="www.github.com/Edax97">Github page</a></p></td>)
+const Present = () => (<td class='pres'><p>Developed by {"E."} Campos<br></br> <a href="https://www.github.com/Edax97">Github page</a></p></td>)
 const Title = () => (<td class='head pres'>
                       <h3>The royal game of Ur</h3>
                       <a href="https://www.mastersofgames.com/rules/royal-ur-rules.htm">Rules of the game</a></td>)
