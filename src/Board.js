@@ -9,8 +9,8 @@ import Vacio from './Images/vacio.png'
 import Fondo from "./Images/madera.jpeg"
 import { ImageBackground } from 'react'
 import Contact from './pages/contact'
-import Bar_navi from './components/navbar'
-
+import BarNavi from './components/NavBar'
+/*Instalar react-Bootstrap*/
 
 
 
@@ -79,7 +79,7 @@ export class boardUr extends React.Component {
     const finalStyle = {border: '4px dashed',textAlign: 'center'};
     const a = 40;
 
-    const style_dice = {position: "relative", top: "4px", left: "4px", width: "60px", height:"60px"};
+    const style_dice = {position: "relative", top: "4px", left: "4px", width: "40px", height:"40px"};
     const style_inside = {position: "relative", top: "4px", left: "4px", width: "40px", height:"40px"};
 
 
@@ -168,7 +168,10 @@ export class boardUr extends React.Component {
 
         <div class="Document" style={style_player}>
 
-        <Bar_navi contactEl={Contact}/>
+        <div class= 'navegacion'>
+          <BarNavi/>
+        </div>
+
 
         <div class='Header' id='royal_home'>
           <h1 class='head'>The Royal game of Ur</h1>
@@ -191,7 +194,7 @@ export class boardUr extends React.Component {
 
 
         <div class='Footer'>
-          <td class='dice_drawer'>
+          <div class='dice_drawer'>
           <button type="button" class='bttn_dice' onClick={()=>this.props.moves.throw_dice()} >
           {this.props.G.dice_mssg}</button> <br></br>
           <br></br>
@@ -199,22 +202,22 @@ export class boardUr extends React.Component {
           <img src={Lista_Dados[this.props.G.d2]} alt="Dado2" style={style_dice}/>
           <img src={Lista_Dados[this.props.G.d3]} alt="Dado3" style={style_dice}/>
           <img src={Lista_Dados[this.props.G.d4]} alt="Dado4" style={style_dice}/>
-          </td>
+          </div>
 
-          <td class="Reset">
+          <div class="Reset">
             <Select_fichas fichas={this.state.value} change={(e)=>(this.handleChange(e))}></Select_fichas>
             <br></br>
             <button type="button"  class='bttn_rs' onClick={(e) => this.handleSubmit(e)}> Restart </button> <br></br>
-          </td>
+          </div>
 
-          <td class="Info">
+          <div class="Info">
             {"It's "} {player_color[this.props.ctx.currentPlayer]}{"'s turn"} <br></br>
             {this.props.G.mssg}<br></br>
           {winner}
-          </td>
+          </div>
         </div>
 
-        <Contact id='cont_info'/>
+        <Contact></Contact>
 
       </div>
 

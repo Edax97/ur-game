@@ -7,7 +7,7 @@ const Present = () => (<div class='pres'><p>E. Campos<br></br> <a href="https://
 function Contact() {
     return (
 
-        <div>
+        <div id="contact_info">
 
 
             <div class="bottom-container">

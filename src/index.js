@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import './css/index.css';
 import './css/fonts.css'
 import App from './App';
-import { Helmet } from 'react-helmet'
 import reportWebVitals from './reportWebVitals';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    
+
     <App />
   </React.StrictMode>,
   document.getElementById('root')
