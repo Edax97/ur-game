@@ -1,0 +1,186 @@
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #EDD2F3;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button{
+  font: bold 24px 'Pushster';
+  color: #FF9292;
+  border: none;
+
+  height: 50px;
+  border-width: 1px;
+  border-style: dashed;
+  border-radius: 5%;
+}
+
+button:hover{
+  transform: scale(1.1);
+  transition: 0.5s;
+
+  color: #C996CC;
+
+}
+
+
+
+
+.Page{
+  font-family: 'Pushster', cursive;
+
+}
+
+.Document{
+  height: 100%;
+}
+
+
+
+.Body{
+  height: 440px;
+  background-color: #998CEB;
+  margin: 20px 10% 20px;
+  position: relative;
+  border-radius: 10%;}
+
+.Footer{
+  height:200px;
+  margin-top: 20px;
+}
+
+.tablero{
+  position: absolute;
+  background-color: rgba(0,0,0,0.1);
+  top: 23%;
+  left: 12%;
+  width: 600px;
+  height: 225px;
+  padding: 0;
+}
+
+.img_ficha{
+  border: 0px;
+  border-style: solid;
+  width: inherit;
+  height: inherit;
+  align: bottom;
+}
+
+#Drawer0{
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  border: 3px double;
+}
+
+#Drawer1{
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  border: 3px double;
+}
+
+.head{
+  font: 36px bold;
+  font-family: 'Dancing Script','Montserrat',cursive;
+
+  margin: 70px auto 0;
+  color: black;
+  border: 0;
+  width: 400px;
+  background-color: none;
+  position: relative;
+
+  text-align: center;
+  padding-bottom: 10px;
+
+}
+
+
+.dice_drawer{
+  padding:10px;
+  position: relative;
+  left: 50px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.black_piece{
+  width: 30px;
+  padding-left: 5px;
+}
+
+
+
+.Reset{
+  border-width: 1px;
+  border-style: dashed;
+  position: relative;
+  left: 100px;
+  top: 20px;
+  padding: 15px;
+  text-align: center;
+}
+
+.set-fichas{
+  font: bold 18px 'Pushster';
+}
+
+.Info{
+  padding: 12px;
+  font-size: 20px;
+  position: relative;
+  left: 120px;
+  top: 5px;
+}
+
+td{
+  border-radius: 5%;
+}
+
+.cell_style{
+  border: none;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+
+}
+
+
+
+a{
+  color: #9D84B7;
+  
+}
+
+a:hover{
+  color: #F7E8E8;
+  font-size: 22px;
+}
+
+
+.goal{
+  color: black;
+  font-size: 24px;
+  border-radius: 100%;
+  width: 30px;
+  position:relative;
+  top: -25px;
+  left: 50%;
+  margin: 0;
+}
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+.bar_navi1{
+  position:fixed;
+}

@@ -8,12 +8,13 @@ import Trans from "./Images/trans.png"
 import Vacio from './Images/vacio.png'
 import Fondo from "./Images/madera.jpeg"
 import { ImageBackground } from 'react'
+import Contact from './pages/contact'
+import Bar_navi from './components/navbar'
 
 
-const Present = () => (<td class='pres'><p>Developed by {"E."} Campos<br></br> <a href="https://www.github.com/Edax97">Github page</a></p></td>)
-const Title = () => (<td class='head pres'>
-                      <h3>The royal game of Ur</h3>
-                      <a href="https://www.mastersofgames.com/rules/royal-ur-rules.htm">Rules of the game</a></td>)
+
+
+
 
 const Select_fichas = (props) =>(<form class='set-fichas'>
                                 <lable for='n_pieces'>{props.fichas} tokens</lable> <br/>
@@ -160,13 +161,18 @@ export class boardUr extends React.Component {
 
 
     return (
+
+
       <div class='Page'>
+
 
         <div class="Document" style={style_player}>
 
-        <div class='Header'>
-          <Title></Title>
-          <Present></Present>
+        <Bar_navi contactEl={Contact}/>
+
+        <div class='Header' id='royal_home'>
+          <h1 class='head'>The Royal game of Ur</h1>
+
         </div>
 
 
@@ -208,7 +214,7 @@ export class boardUr extends React.Component {
           </td>
         </div>
 
-
+        <Contact id='cont_info'/>
 
       </div>
 
