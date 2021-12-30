@@ -1,0 +1,32 @@
+.Barr {
+  background-color: #3F3351;
+}
+
+.Barr button {
+  background-color: #E9A6A6;
+  color: #3E065F;
+}
+.Barr p {
+  color: white;
+}
+
+.Footer {
+  background-color: rgba(134, 72, 121, 0.3);
+}
+
+.Footer button {
+  background-color: #9A0680;
+  color: white;
+}
+.Footer #label {
+  -webkit-text-stroke-color: white;
+}
+.Footer .Info {
+  -webkit-text-stroke-color: white;
+}
+
+.Body1 {
+  background-color: rgba(134, 72, 121, 0.3);
+}
+
+/*# sourceMappingURL=dark_mode.css.map */

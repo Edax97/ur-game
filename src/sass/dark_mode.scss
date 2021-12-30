@@ -1,0 +1,50 @@
+$bar-color: #EDD2F3;
+$secondary-color:  rgba(202, 180, 240, 0.6);
+$buttons-color: #3E065F;
+$buttons-bg:#E9A6A6;
+$text-color: black;
+
+
+$bar-dark: #3F3351;
+$secondary-dark: rgba(134, 72, 121, 0.3);
+$buttons-dark: #160040;
+$buttons-bg-dark: #9A0680;
+$text-dark: white;
+
+.Barr{
+  background-color: $bar-dark;
+}
+
+.Barr{
+  button{
+    background-color: $buttons-bg;
+    color: $buttons-color;
+  }
+
+  p{
+    color: $text-dark;
+  }
+}
+
+.Footer{
+  background-color: $secondary-dark;
+}
+
+.Footer{
+  button{
+    background-color: $buttons-bg-dark;
+    color: $text-dark;
+  }
+
+  #label{
+    -webkit-text-stroke-color: $text-dark;
+  }
+  .Info{
+    -webkit-text-stroke-color: $text-dark;
+  }
+
+}
+
+.Body1{
+  background-color: $secondary-dark;
+}
