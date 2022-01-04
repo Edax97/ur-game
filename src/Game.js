@@ -5,7 +5,7 @@ export const gameUr = {
 
 
     return { ID:-1, COL:10,cells: Array(2).fill(Array(15).fill(0)), pieza: false, d1: 0, d2: 0, d3:0, d4:0,
-    sum_dados:0, dice_mssg:"Roll the dice", pos_fichas: Array(2).fill(Array(7).fill(-1)), count_cells: 0,
+    sum_dados:0, dice_mssg:"Roll the ", pos_fichas: Array(2).fill(Array(7).fill(-1)), count_cells: 0,
     mssg:"", num_fichas:7}
   },
 
@@ -26,7 +26,7 @@ export const gameUr = {
         throw_dice: (G,ctx) =>{
 
           G.mssg = "";
-          if (G.dice_mssg == "Roll the dice"){
+          if (G.dice_mssg == "Roll the "){
           G.d1=Math.floor(Math.random() * 2);
           G.d2=Math.floor(Math.random() * 2);
           G.d3=Math.floor(Math.random() * 2);
@@ -43,7 +43,7 @@ export const gameUr = {
                 //return INVALID_MOVE;
             }
          }
-         if (G.sum_dados == 0 || G.count_cells == 15){G.dice_mssg="Roll the dice"; G.count_cells = 0; ctx.events.endTurn({ next: 1-ctx.currentPlayer });}
+         if (G.sum_dados == 0 || G.count_cells == 15){G.dice_mssg="Roll the "; G.count_cells = 0; ctx.events.endTurn({ next: 1-ctx.currentPlayer });}
          else {G.count_cells = 0;}
          }
 
@@ -53,7 +53,7 @@ export const gameUr = {
 
           G.ID = id;
           G.COL = col;
-          if ((G.dice_mssg == "Roll the dice") ||
+          if ((G.dice_mssg == "Roll the ") ||
               (G.cells[ctx.currentPlayer][id]==1 && id != 14) ||
               (G.cells[1-ctx.currentPlayer][id]==1 && id == 6) ||
               (G.pos_fichas[ctx.currentPlayer].every(el => el != id-G.sum_dados)) ||
@@ -83,7 +83,7 @@ export const gameUr = {
             }
 
 
-            G.dice_mssg="Roll the dice";
+            G.dice_mssg="Roll the ";
 
             if (id == 6 || id == 0 || id == 10){
               ctx.events.endTurn({ next: ctx.currentPlayer });
@@ -102,7 +102,7 @@ export const gameUr = {
   },
   */
   endIf: (G, ctx) => {
-    //  G.dice_mssg ="Roll the dice";
+    //  G.dice_mssg ="Roll the ";
     if (G.pos_fichas[ctx.currentPlayer].every(e => e == 14)){
       return {winner: ctx.currentPlayer};
     }
@@ -113,11 +113,11 @@ export const gameUr = {
      const columna_list=[0,2];
      let colum = columna_list[ctx.currentPlayer];
 
-     //if (G.dice_mssg == "Roll the dice"){
+     //if (G.dice_mssg == "Roll the "){
      //   moves.push({ move: 'throw_dice'});
      //   return moves;
      //}
-     moves.push({ move: 'throw_dice'});
+
 
 
      for (let i = 0; i < 15; i++) {
@@ -125,7 +125,7 @@ export const gameUr = {
            (G.cells[1-ctx.currentPlayer][i] != 1 || i != 6) &&
            (G.pos_fichas[ctx.currentPlayer].any(el => el == i-G.sum_dados)))
        {
-           moves.push({ move:'throw_dice',move: 'clickCell', args: [i, columna_list[ctx.currentPlayer]] });
+           moves.push({ move: 'clickCell', args: [i, columna_list[ctx.currentPlayer]] });
            //return INVALID_MOVE;
        }}
 

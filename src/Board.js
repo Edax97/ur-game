@@ -11,9 +11,10 @@ import Contact from './pages/contact'
 import BarNavi from './components/NavBar'
 import './css/fonts.css';
 /*Instalar react-Bootstrap*/
-
-
-
+import { FaDice } from 'react-icons/fa';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 const Select_fichas = (props) =>(<form class='set-fichas'>
@@ -89,7 +90,7 @@ export class boardUr extends React.Component {
     const finalStyle = {border: '4px dashed',textAlign: 'center'};
     const a = 40;
 
-    const style_dice = {position: "relative", top: "4px", left: "4px", width: "40px", height:"40px"};
+    const style_dice = {position: "relative", top: "4px", left: "4px",};
 
 
 
@@ -172,7 +173,14 @@ export class boardUr extends React.Component {
     return (
 
 
+
+
       <div class='Page'>
+
+
+
+
+
 
         <link id='stilo_sw' rel='stylesheet' type='text/css' href={process.env.PUBLIC_URL +this.state.estilo_f}/>
         <div class="Document" style={style_player}>
@@ -188,57 +196,65 @@ export class boardUr extends React.Component {
         </div>
 
 
-        <div class='Body'>
+        <Container fluid >
+          <Row className="justify-content-md-center big-container" >
+            <Col lg="8">
 
-        <div class='Body1'>
-          <div class='spacer'>
-            <td class="Drawer">
-              {Fichas_Restantes_0}
-            </td>
-          </div>
+              <div class='Body1'>
+              <div class='spacer'>
+                <td class="Drawer">
+                  {Fichas_Restantes_0}
+                </td>
+              </div>
 
-          <div class='Tablero'>
+              <div class='Tablero'>
 
-            <table id="board" class='tablero'>
-              <tbody>{tbody}</tbody>
-            </table>
-          </div>
-          <div class='spacer'>
-            <td class="Drawer">
-              {Fichas_Restantes_1}
-            </td>
-          </div>
-        </div>
-        <div class='Body2'>
-          <div class='Footer'>
-            <div class='dice_drawer foot'>
-              <button type="button" class='bttn' onClick={()=>this.props.moves.throw_dice()} >
-                <p>{this.props.G.dice_mssg}</p>
-              </button> <br></br>
+                <table id="board" class='tablero'>
+                  <tbody>{tbody}</tbody>
+                </table>
+              </div>
+              <div class='spacer'>
+                <td class="Drawer">
+                  {Fichas_Restantes_1}
+                </td>
+              </div>
+              </div>
+            </Col>
 
-              <img src={Lista_Dados[this.props.G.d1]} alt="Dado1" style={style_dice}/>
-              <img src={Lista_Dados[this.props.G.d2]} alt="Dado2" style={style_dice}/>
-              <img src={Lista_Dados[this.props.G.d3]} alt="Dado3" style={style_dice}/>
-              <img src={Lista_Dados[this.props.G.d4]} alt="Dado4" style={style_dice}/>
+            <Col lg="4">
+
+              <div class='Footer'>
+                <div class='dice_drawer foot'>
+                  <button type="button" class='bttn' onClick={()=>this.props.moves.throw_dice()} >
+                    <p>{this.props.G.dice_mssg}{ this.props.G.dice_mssg=='Roll the ' ? < FaDice class='dice'/> : ''}</p>
+                  </button> <br></br>
+
+                  <img src={Lista_Dados[this.props.G.d1]} alt="Dado1" class='dice-3' style={style_dice}/>
+                  <img src={Lista_Dados[this.props.G.d2]} alt="Dado2" class='dice-3' style={style_dice}/>
+                  <img src={Lista_Dados[this.props.G.d3]} alt="Dado3" class='dice-3' style={style_dice}/>
+                  <img src={Lista_Dados[this.props.G.d4]} alt="Dado4" class='dice-3' style={style_dice}/>
+                </div>
+
+                <div class="Info foot">
+                  {"It's "} <span style={{backgroundColor: color_jugadores[this.props.ctx.currentPlayer],}}>{player_color[this.props.ctx.currentPlayer]}</span>{"'s turn"} <br></br>
+                  {this.props.G.mssg}<br></br>
+                {winner}
+                </div>
+
+                <div class="Reset foot">
+                  <Select_fichas fichas={this.state.value} change={(e)=>(this.handleChange(e))}></Select_fichas>
+
+                  <button type="button"  class='bttn' onClick={(e) => this.handleSubmit(e)}><p>Restart</p> </button> <br></br>
+                </div>
+
+
             </div>
 
-            <div class="Reset foot">
-              <Select_fichas fichas={this.state.value} change={(e)=>(this.handleChange(e))}></Select_fichas>
+          </Col>
+          </Row>
 
-              <button type="button"  class='bttn' onClick={(e) => this.handleSubmit(e)}><p>Restart</p> </button> <br></br>
-            </div>
+      </Container>
 
-            <div class="Info foot">
-              {"It's "} {player_color[this.props.ctx.currentPlayer]}{"'s turn"} <br></br>
-              {this.props.G.mssg}<br></br>
-            {winner}
-            </div>
-        </div>
-
-
-
-      </div>
-      </div>
       <Contact></Contact>
 
       </div>

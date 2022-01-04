@@ -2,6 +2,16 @@
 .Barr{
   font-family: 'Montserrat';
   font-weight: bolder;
+  padding: 0;
+
+}
+
+.barr{
+}
+
+.me-auto{
+  text-align: right;
+  justify-content: end;
 }
 
 .Barr p{
@@ -11,4 +21,15 @@
 
 .Barr button{
   margin-left: 10px;
+}
+
+.brand-bar{
+  font-size: 2.5rem;
+
+}
+
+@media only screen and (min-width: 1200px) {
+  .me-auto{
+    font-size: 1.2rem;
+  }
 }
