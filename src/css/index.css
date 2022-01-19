@@ -25,12 +25,6 @@ button{
 
 }
 
-.bttn p{
-  font-size: 22px;
-  margin: 0;
-  padding:0;
-}
-
 button:hover{
   transform: scale(1.1);
   transition: 0.5s;
@@ -60,7 +54,7 @@ navegacion{
 
 
 .big-container{
-  padding: 40px 5%;
+  padding: 20px 5%;
 }
 
 
@@ -82,8 +76,8 @@ navegacion{
   font: 36px bold;
   font-family: 'Dancing Script','Montserrat',cursive;
 
-  margin: 50px auto 0;
-  padding-top: 50px;
+  margin: 15px auto 0;
+  padding-top: 30px;
   color: black;
 
 }
@@ -115,10 +109,10 @@ a:hover{
 
   background-color: rgba(202, 180, 240, 0.5) ;
 
-  border-radius: 10%;
+  border-radius: 50px;
 
-  padding: 10px 30px 10px;
-  
+  padding: 10px 30px;
+
 }
 
 .spacer{
@@ -135,7 +129,7 @@ a:hover{
 
 
 .piece{
-  width: 2.5vw;
+  width: 3vw;
   margin: 4px auto 1px;
 
 }
@@ -157,12 +151,7 @@ a:hover{
 
 }
 
-.container- {
-   background-color: red;
-   position: relative;
-   width: 100%;
-   padding-bottom: 10%; /* 4:3 Aspect Ratio */
-}
+
 
 #board{
   z-index: 2;
@@ -173,8 +162,8 @@ a:hover{
 
 
 .cell_style{
-  width: 5.5vw;
-  height: 5.5vw;
+  width: 6vw;
+  height: 6vw;
   text-align: center;
 
 }
@@ -195,22 +184,29 @@ a:hover{
   flex-direction: column;
   justify-content: space-around;
   background-color: rgba(202, 180, 240, 0.5);
-  border-radius: 10%;
-
-
-
+  border-radius: 3vw;
 }
 
 .foot{
-
   text-align: center;
   font-size: 26px;
   padding: 25px;
-
 }
+
 .dice_drawer .bttn{
   margin-bottom: 15px;
+}
 
+.dice_drawer p{
+  font-size: 26px;
+  margin: 0;
+  padding: 5px;
+}
+
+.Reset p{
+  font-size: 22px;
+  margin: 0;
+  padding: 5px;
 }
 
 .dice-3{
@@ -238,36 +234,111 @@ a:hover{
 }
 
 @media only screen and (max-width: 992px) {
+  .head{
+    font-size: 4.5vw;
+    padding-top: 20px;
+    margin-top: 10px;
+  }
+
+  .big-container{
+    padding-top: 10px;
+  }
+
   .Footer {
     flex-direction: row;
   }
+
+  .foot{
+    padding: 10px 10px;
+  }
+
   .piece{
-    width: 3.2vw;
+    width: 4.2vw;
   }
 
   .cell_style{
-    width: 9vw;
-    height: 9vw;
+    width: 9.4vw;
+    height: 9.4vw;
   }
 
   .Info{
-    font-size: 2vw;
+    font-size: 2.4vw;
+  }
+
+  .Reset{
+    width: 35%;
   }
 
   #label{
-    font-size: 2vw;
+    font-size: 2.2vw;
   }
 
-  .bttn p{
-    font-size: 2vw;
+  .dice_drawer p{
+    font-size: 3vw;
+  }
+
+  .Reset p{
+    font-size: 2.4vw;
   }
 
   .dice-3{
-    height: 4vw;
-    width: 4vw;
+    height: 5vw;
+    width: 5vw;
   }
 }
 
+@media only screen and (max-width: 480px) {
+  .head{
+    font-size: 5vw;
+    padding-top: 10px;
+  }
+
+  .big-container{
+    padding-top: 10px;
+  }
+
+  .Footer {
+    flex-direction: row;
+  }
+
+  .foot{
+    padding: 10px 10px;
+  }
+
+  .piece{
+    width: 4.2vw;
+  }
+
+  .cell_style{
+    width: 9.4vw;
+    height: 9.4vw;
+  }
+
+  .Info{
+    font-size: 2.7vw;
+  }
+
+  .Reset{
+    width: 35%;
+  }
+
+  #label{
+    font-size: 2.3vw;
+  }
+
+  .dice_drawer p{
+    font-size: 4.2vw;
+  }
+
+  .Reset p{
+    font-size: 3.5vw;
+  }
+
+  .dice-3{
+    height: 5vw;
+    width: 5vw;
+  }
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .dice {

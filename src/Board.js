@@ -248,12 +248,16 @@ export class boardUr extends React.Component {
                 </div>
 
 
+
+
             </div>
 
           </Col>
           </Row>
 
       </Container>
+
+       
 
       <Contact></Contact>
 
