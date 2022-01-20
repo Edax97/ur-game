@@ -135,7 +135,7 @@ a:hover{
 }
 
 .black_piece{
-  width: 30px;
+  width: 2.5vw;
   margin: 4px auto 1px;
 }
 
@@ -256,6 +256,10 @@ a:hover{
     width: 4.2vw;
   }
 
+  .black_piece{
+    width: 4vw;
+  }
+
   .cell_style{
     width: 9.4vw;
     height: 9.4vw;
@@ -309,6 +313,9 @@ a:hover{
     width: 4.2vw;
   }
 
+  .black-piece{
+    width: 3.8vw;
+  }
   .cell_style{
     width: 9.4vw;
     height: 9.4vw;
