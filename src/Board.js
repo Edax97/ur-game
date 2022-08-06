@@ -259,7 +259,7 @@ export class boardUr extends React.Component {
 
 
 
-      
+      <Contact></Contact>
 
       </div>
 

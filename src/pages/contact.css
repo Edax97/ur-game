@@ -1,5 +1,5 @@
 .bottom-container{
-  background-color: #b8aff0;
+
   padding: 20px 0 20px;
   margin: 100px 10% 0;
   border-radius: 50px;
@@ -11,6 +11,10 @@
 
 .bottom-container h3{
   margin-bottom: 20px;
+}
+
+.bottom-container .inlogo{
+  font-size: 35px;
 }
 
 .bottom-container .copy{
