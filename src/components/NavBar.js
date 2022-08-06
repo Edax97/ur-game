@@ -21,7 +21,7 @@ const BarNavi= (props) => (<Navbar bg={props.mode} expand="sm" className='Barr'>
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
         <Nav.Link href='https://www.mastersofgames.com/rules/royal-ur-rules.htm'><p>Rules < FaExternalLinkAlt /></p></Nav.Link>
-        <Nav.Link href="#contact_info"><p>Contact me</p></Nav.Link>
+        
         <button type="button" class='bttn_dice' onClick={(e)=>props.change_style(e)}>
         {(props.mode=='light') ? <BsMoonFill/> : <BsFillSunFill/> }</button>
       </Nav>

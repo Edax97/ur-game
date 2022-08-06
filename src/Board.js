@@ -257,9 +257,9 @@ export class boardUr extends React.Component {
 
       </Container>
 
-       
 
-      <Contact></Contact>
+
+      
 
       </div>
 
